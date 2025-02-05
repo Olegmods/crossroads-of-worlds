@@ -191,6 +191,7 @@
 				{
 					"name" : "Marketplace",
 					"description" : "With the Marketplace, you can buy and sell resources (exchange rates increase with each Marketplace you own).",
+					"marketModes" : ["resource-resource", "resource-player"],
 					"cost" :
 					{
 						"wood" : 5,
@@ -207,13 +208,15 @@
 						"ore" : 5,
 						"gold" : 5000
 					},
+					"produce": { "crystal": 1 },
 					"requires" : ["marketplace"],
 					"id" : 15
 				},
 				"blacksmith" :
 				{
-					"description" : "The Blacksmith provides your armies with Balistas.",
+					"description" : "The Blacksmith provides your armies with Military Crossbows.",
 					"name" : "Blacksmith",
+					"warMachine" : "tenMilitaryCrossbow",
 					"cost" :
 					{
 						"wood" : 5,
@@ -253,7 +256,7 @@
 				},
 				"special1" : 
 				{
-					"description" : "During s siege, the Brotherhood of the Sword increases troop morale +2.",
+					"description" : "During siege, the Brotherhood of the Sword increases troop morale +2.",
 					"name" : "Brotherhood of the Sword",
 					"cost" : 
 					{
@@ -261,34 +264,57 @@
 						"gold" : 500
 					},
                     "requires" : [ "tavern" ],
-                    "type" : "brotherhoodOfSword",
+                    "upgradeReplacesBonuses" : true,
+					"bonuses": [
+						{
+							"type": "MORALE",
+							"val": 2
+						}
+					],
 					"id" : 17,
 					"upgrades" : "tavern"						
 				},	
 				"special2" :
 				{
-					"description" : "The Stables Increases the power reserve until the end of the week of each hero visiting the city.",
+					"description" : "The Stables increase the power reserve until the end of the week of each hero visiting the city.",
 					"name" : "Stables",
 					"cost" :
 					{
-						"wood"    : 10,
+						"wood" : 10,
 						"gold" : 2000
 					},
-					"type" : "stables",
+					"configuration" : {
+						"visitMode" : "bonus",
+						"rewards" : [
+							{
+								"message" : "@core.genrltxt.580",
+								"movePoints" : 400,
+								"bonuses" : [ { "type" : "MOVEMENT", "subtype" : "heroMovementLand",  "val" : 400, "stacking" : "stables", "valueType" : "ADDITIVE_VALUE", "duration" : "ONE_WEEK"} ]
+							}
+						]
+					},
 					"requires" : ["dwellingLvl4"],
 					"id" : 21
 				},
 				"special3" : 
 				{
-					"description" : "The Magic Boulder increase spell power of visiting hero by +1.",
+					"description" : "The Magic Boulder increase knowledge of visiting hero by +1.",
 					"name" : "Magic Boulder",
 					"cost" : 
 					{
-                        "ore" : 5,
+                        "wood" : 5,
 						"gold" : 1000
 					},
-					"type" : "spellPowerVisitingBonus",
-					"requires" : [ "mageGuild1" ],
+					"configuration" : {
+						"visitMode" : "hero",
+						"rewards" : [
+							{
+								"message" : "The Magic Boulder teach you new ways to focus your magical powers (+1 spellpower)",
+								"primary" : { "spellpower" : 1 }
+							}
+						]
+					},
+					"requires" : ["mageGuild1"],
 					"id" : 22
 				},
 				"grail" :
@@ -297,6 +323,7 @@
 					"name" : "Sun",
 					"produce": { "gold": 5000 },
 					"id" : 26,
+					"bonuses": [ { "type": "MORALE", "val": 2, "propagator": "PLAYER_PROPAGATOR" } ],
 					"mode" : "grail"
 				},
 				"dwellingLvl1" :

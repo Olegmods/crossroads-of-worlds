@@ -180,6 +180,7 @@
 				{
 					"name" : "Marketplace",
 					"description" : "With the Marketplace, you can buy and sell resources (exchange rates increase with each Marketplace you own).",
+					"marketModes" : ["resource-resource", "resource-player"],
 					"cost" :
 					{
 						"wood" : 5,
@@ -197,12 +198,14 @@
 						"gold" : 5000
 					},
 					"requires" : ["marketplace"],
+					"produce": { "sulfur": 1 },
 					"id" : 15
 				},
 				"blacksmith" :
 				{
-					"description" : "The Blacksmith provides your armies with Bolt Cannon.",
+					"description" : "The Blacksmith provides your armies with Bolt Cannons.",
 					"name" : "Blacksmith",
+					"warMachine" : "unBoltCannon",
 					"cost" :
 					{
 						"wood" : 5,
@@ -242,26 +245,35 @@
 					{
 						"gold" : 10000
 					},
-					"type" : "artifactMerchant",
+					"marketModes" : ["resource-artifact", "artifact-resource"],
 					"requires" : [ "marketplace" ],
 					"id" : 17
 				},
 				"special2" :
 				{
-					"description" : "The Stables Increases the power reserve until the end of the week of each hero visiting the city.",
+					"description" : "The Stables increase the power reserve until the end of the week of each hero visiting the city.",
 					"name" : "Stables",
 					"cost" :
 					{
 						"wood"    : 10,
 						"gold" : 2000
 					},
-					"type" : "stables",
+					"configuration" : {
+						"visitMode" : "bonus",
+						"rewards" : [
+							{
+								"message" : "@core.genrltxt.580",
+								"movePoints" : 400,
+								"bonuses" : [ { "type" : "MOVEMENT", "subtype" : "heroMovementLand",  "val" : 400, "stacking" : "stables", "valueType" : "ADDITIVE_VALUE", "duration" : "ONE_WEEK"} ]
+							}
+						]
+					},
 					"requires" : ["dwellingLvl4"],
 					"id" : 21
 				},
 				"special3" : 
 				{
-					"description" : "During s siege, the Brotherhood of the Sword increases troop morale +2.",
+					"description" : "During siege, the Brotherhood of the Sword increases troop morale +2.",
 					"name" : "Brotherhood of the Sword",
 					"cost" : 
 					{
@@ -269,15 +281,22 @@
 						"gold" : 500
 					},
                     "requires" : [ "tavern" ],
-                    "type" : "brotherhoodOfSword",
+                    "upgradeReplacesBonuses" : true,
+					"bonuses": [
+						{
+							"type": "MORALE",
+							"val": 2
+						}
+					],
 					"id" : 22,
 					"upgrades" : "tavern"								
 				},	
 				"grail" :
 				{
-                                        "description" : "The presence of the Tree of Oblivion's increases weekly creature generation by 50%, provides your kingdom with an additional 5000 gold each day, and increases the power of Earth magic by 50% of all allied heroes.",	
-					"name" : "Tree of Oblivion,s",
+                    "description" : "The presence of the Tree of Oblivion's increases weekly creature generation by 50%, provides your kingdom with an additional 5000 gold each day, and increases the power of Earth magic by 50% of all allied heroes.",	
+					"name" : "Tree of Oblivion's",
 					"produce": { "gold": 5000 },
+					"bonuses": [ {"type" : "SPELL_DAMAGE", "subtype" : "spellSchool.earth", "val": 50, "valueType" : "BASE_NUMBER", "propagator": "PLAYER_PROPAGATOR" } ],
 					"id" : 26,
 					"mode" : "grail"
 				},

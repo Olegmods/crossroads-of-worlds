@@ -180,6 +180,7 @@
 				{
 					"name" : "Marketplace",
 					"description" : "With the Marketplace, you can buy and sell resources (exchange rates increase with each Marketplace you own).",
+					"marketModes" : ["resource-resource", "resource-player"],
 					"cost" :
 					{
 						"wood" : 5,
@@ -191,6 +192,7 @@
 				{
 					"name" : "Resource Silo",
 					"description" : "The Resource Silo provides you with an additional +1 mercury each day.",
+					"produce": { "mercury": 1 },
 					"cost" :
 					{
 						"ore" : 5,
@@ -201,8 +203,9 @@
 				},
 				"blacksmith" :
 				{
-					"description" : "The Blacksmith provides your armies with Bolt Cannon.",
+					"description" : "The Blacksmith provides your armies with Flaming Crossbows.",
 					"name" : "Blacksmith",
+					"warMachine" : "itBoltCannon",
 					"cost" :
 					{
 						"wood" : 5,
@@ -236,7 +239,7 @@
 				},
 				"special1" : 
 				{
-					"description" : "During s siege, the Brotherhood of the Sword increases troop morale +2.",
+					"description" : "During siege, the Brotherhood of the Sword increases troop morale +2.",
 					"name" : "Brotherhood of the Sword",
 					"cost" : 
 					{
@@ -244,7 +247,13 @@
 						"gold" : 500
 					},
                     "requires" : [ "tavern" ],
-                    "type" : "brotherhoodOfSword",
+                    "upgradeReplacesBonuses" : true,
+					"bonuses": [
+						{
+							"type": "MORALE",
+							"val": 2
+						}
+					],
 					"id" : 17,
 					"upgrades" : "tavern"
 				},
@@ -257,13 +266,22 @@
 						"wood"    : 10,
 						"gold" : 2000
 					},
-					"type" : "stables",
+					"configuration" : {
+						"visitMode" : "bonus",
+						"rewards" : [
+							{
+								"message" : "@core.genrltxt.580",
+								"movePoints" : 400,
+								"bonuses" : [ { "type" : "MOVEMENT", "subtype" : "heroMovementLand",  "val" : 400, "stacking" : "stables", "valueType" : "ADDITIVE_VALUE", "duration" : "ONE_WEEK"} ]
+							}
+						]
+					},
 					"requires" : ["dwellingLvl4"],
 					"id" : 21
 				},
 				"special3" : 
 				{
-					"description" : "Allows travel Imperium towns containang Monolith.Destination town must be unoccupied",
+					"description" : "Allows travel Imperium towns containing Monoliths. Destination town must be unoccupied.",
 					"name" : "Monolith",
 					"cost" : 
 					{
@@ -281,6 +299,7 @@
 					"name" : "Altar of Mission ",
 					"id" : 26,
 					"produce": { "gold": 5000 },
+					"bonuses": [ { "type": "MORALE", "val": 2, "propagator": "PLAYER_PROPAGATOR" } ],
 					"mode" : "grail"
 				},
 				"dwellingLvl1" :

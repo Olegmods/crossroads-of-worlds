@@ -2,7 +2,7 @@
 	"name" : "Tenebrae",
 	"description" : "Tenebrae",
 	"author": "zeryss",
-	"version" : "0.1",
+	"version" : "0.2",
 	"contact": "https://vk.com/public184999722",
 	"modType" : "Compatibility",	
 	"depends" : ["hota.highlandsterrain"], 

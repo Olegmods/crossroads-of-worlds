@@ -28,7 +28,7 @@
 				}
 			},
 
-			"musicTheme" : "music/factions/imperium",
+			"musicTheme" : [ "music/factions/imperium" ],
 			"defaultTavern" : 5,
 			"tavern" :
 			{
@@ -50,8 +50,8 @@
 				"witch"        : 5,
 				"planeswalker" : 5,
 				"elementalist" : 5,
-                                "advisor"    : 5,
-                                "baron"    : 5
+                "advisor"    : 5,
+                "baron"    : 5
 			},
 			"tavernVideo" : "TAVERN.BIK",
 			"guildBackground" : "TPMAGE.bmp",
@@ -167,7 +167,6 @@
 				}
                         },
 			"mageGuild" : 5,
-			"warMachine" : "itBoltCannon",
 			"names" : [
 				"Srilens",
 				"Clihmond",

@@ -180,6 +180,7 @@
 				{
 					"name" : "Marketplace",
 					"description" : "With the Marketplace, you can buy and sell resources (exchange rates increase with each Marketplace you own).",
+					"marketModes" : ["resource-resource", "resource-player"],
 					"cost" :
 					{
 						"wood" : 5,
@@ -191,6 +192,7 @@
 				{
 					"name" : "Resource Silo",
 					"description" : "The Resource Silo provides you with an additional +1 crystal each day.",
+					"produce": { "crystal": 1 },
 					"cost" :
 					{
 						"ore" : 5,
@@ -201,7 +203,8 @@
 				},
 				"blacksmith" :
 				{
-					"description" : "The Blacksmith provides your armies with Balistas.",
+					"description" : "The Blacksmith provides your armies with Heavy Crossbows.",
+					"warMachine" : "opHeavyCrossbow",
 					"name" : "Blacksmith",
 					"cost" :
 					{
@@ -236,7 +239,7 @@
 				},
 				"special1" : 
 				{
-					"description" : "During s siege, the Brotherhood of the Sword increases troop morale +2.",
+					"description" : "During siege, the Brotherhood of the Sword increases troop morale +2.",
 					"name" : "Brotherhood of the Sword",
 					"cost" : 
 					{
@@ -244,20 +247,35 @@
 						"gold" : 500
 					},
                     "requires" : [ "tavern" ],
-                    "type" : "brotherhoodOfSword",
+                    "upgradeReplacesBonuses" : true,
+					"bonuses": [
+						{
+							"type": "MORALE",
+							"val": 2
+						}
+					],
 					"id" : 17,
 					"upgrades" : "tavern"						
 				},	
 				"special2" :
 				{
-					"description" : "The Stables Increases the power reserve until the end of the week of each hero visiting the city.",
+					"description" : "The Stables increase the power reserve until the end of the week of each hero visiting the city.",
 					"name" : "Stables",
 					"cost" :
 					{
 						"wood"    : 10,
 						"gold" : 2000
 					},
-					"type" : "stables",
+					"configuration" : {
+						"visitMode" : "bonus",
+						"rewards" : [
+							{
+								"message" : "@core.genrltxt.580",
+								"movePoints" : 400,
+								"bonuses" : [ { "type" : "MOVEMENT", "subtype" : "heroMovementLand",  "val" : 400, "stacking" : "stables", "valueType" : "ADDITIVE_VALUE", "duration" : "ONE_WEEK"} ]
+							}
+						]
+					},
 					"requires" : ["dwellingLvl4"],
 					"id" : 21
 				},
@@ -267,10 +285,18 @@
 					"name" : "Chapel",
 					"cost" : 
 					{
-                    	                        "ore" : 5,
+                    	"ore" : 5,
 						"gold" : 1000
 					},
-					"type" : "attackVisitingBonus",
+					"configuration" : {
+						"visitMode" : "hero",
+						"rewards" : [
+							{
+								"message" : "Some time spent at the Chapel allows you to learn more effective combat skills (+1 Attack skill)",
+								"primary" : { "attack" : 1 }
+							}
+						]
+					},
 					"requires" : ["mageGuild1"],
 					"id" : 22
 				},
@@ -279,6 +305,7 @@
                     "description" : "The presence of the Thunderstorm increases weekly creature generation by 50%, provides your kingdom with an additional 5000 gold each day, and increases the power of Earth magic by 50% of all allied heroes.",	
 					"name" : "Thunderstorm",
 					"produce": { "gold": 5000 },
+					"bonuses": [ {"type" : "SPELL_DAMAGE", "subtype" : "spellSchool.earth", "val": 50, "valueType" : "BASE_NUMBER", "propagator": "PLAYER_PROPAGATOR" } ],
 					"id" : 26,
 					"mode" : "grail"
 				},

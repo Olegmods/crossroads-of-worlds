@@ -28,7 +28,7 @@
 				}
 			},
 
-			"musicTheme" : "music/factions/highland",
+			"musicTheme" : [ "music/factions/highland" ],
 			"defaultTavern" : 5,
 			"tavern" :
 			{
@@ -135,7 +135,7 @@
 			"guildWindow"   : "highland/town-screen/mage-guild.bmp",
 			"buildingsIcons": "highland/town-hall.def",
 			"hallBackground": "TPTHBKCS.BMP",
-                        "primaryResource" : "gems",
+            "primaryResource" : "gems",
 			"hallSlots":
 			[
 				[ [ "villageHall", "townHall", "cityHall", "capitol" ], [ "fort", "citadel", "castle" ], [ "tavern", "special1" ], [ "blacksmith" ] ],
@@ -173,9 +173,6 @@
 				}
                         },
 			"mageGuild" : 5,
-			"warMachine" : "hiHeavyCrossbow",
-			//"moatDamage" : 70,
-			//"moatHexes" : [ 11, 28, 44, 61, 77, 111, 129, 146, 164, 181 ],
 			"names" : [
 				"Snow Barrier",
 				"Top Garden",

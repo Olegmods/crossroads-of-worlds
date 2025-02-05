@@ -29,7 +29,7 @@
 				}
 			},
 
-			"musicTheme" : "music/factions/underworld",
+			"musicTheme" : [ "music/factions/underworld" ],
 			"defaultTavern" : 5,
 			"tavern" :
 			{
@@ -51,8 +51,8 @@
 				"witch"        : 5,
 				"planeswalker" : 5,
 				"elementalist" : 5,
-                                "unPrelate"    : 5,
-                                "unDignitary"    : 5
+                "unPrelate"    : 5,
+                "unDignitary"    : 5
 			},
 			"tavernVideo" : "TAVERN.BIK",
 			"guildBackground" : "TPMAGE.bmp",
@@ -153,7 +153,6 @@
 				}
                         },
 			"mageGuild" : 5,
-			"warMachine" : "unBoltCannon",
 			"moatAbility" : "castleMoat",
 			"names" : [
 				"Vridfast",

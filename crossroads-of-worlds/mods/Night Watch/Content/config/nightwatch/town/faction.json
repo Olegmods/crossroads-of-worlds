@@ -28,7 +28,7 @@
 				}
 			},
 
-			"musicTheme" : "music/factions/tovne",
+			"musicTheme" : [ "music/factions/tovne" ],
 			"defaultTavern" : 5,
 			"tavern" :
 			{
@@ -50,8 +50,8 @@
 				"witch"        : 5,
 				"planeswalker" : 5,
 				"elementalist" : 5,
-                                "chaplain"    : 5,
-                                "duke"    : 5
+                "chaplain"    : 5,
+                "duke"    : 5
 			},
 			"tavernVideo" : "TAVERN.BIK",
 			"guildBackground" : "TPMAGE.bmp",
@@ -152,7 +152,6 @@
 				}
                         },
 			"mageGuild" : 5,
-			"warMachine" : "nwPlagueCrossbow",
 			"moatAbility" : "castleMoat",
 			"names" : [
 				"Cragas",

@@ -185,6 +185,7 @@
 						"wood" : 5,
 						"gold" : 500
 					},
+					"marketModes" : ["resource-resource", "resource-player"],
 					"id" : 14
 				},
 				"resourceSilo" :
@@ -196,13 +197,15 @@
 						"ore" : 5,
 						"gold" : 5000
 					},
+					"produce": { "gems": 1 },
 					"requires" : ["marketplace"],
 					"id" : 15
 				},
 				"blacksmith" :
 				{
-					"description" : "The Blacksmith provides your armies with Siege Crossbow.",
+					"description" : "The Blacksmith provides your armies with Siege Crossbows.",
 					"name" : "Blacksmith",
+					"warMachine" : "saSiegeCrossbow",
 					"cost" :
 					{
 						"wood" : 5,
@@ -236,7 +239,7 @@
 				},
 				"special1" : 
 				{
-					"description" : "During s siege, the Brotherhood of the Sword increases troop morale +2.",
+					"description" : "During siege, the Brotherhood of the Sword increases troop morale +2.",
 					"name" : "Brotherhood of the Sword",
 					"cost" : 
 					{
@@ -244,7 +247,13 @@
 						"gold" : 500
 					},
                     "requires" : [ "tavern" ],
-                    "type" : "brotherhoodOfSword",
+                    "upgradeReplacesBonuses" : true,
+					"bonuses": [
+						{
+							"type": "MORALE",
+							"val": 2
+						}
+					],
 					"id" : 17,
 					"upgrades" : "tavern"						
 				},	
@@ -257,7 +266,16 @@
 						"wood"    : 10,
 						"gold" : 2000
 					},
-					"type" : "stables",
+					"configuration" : {
+						"visitMode" : "bonus",
+						"rewards" : [
+							{
+								"message" : "@core.genrltxt.580",
+								"movePoints" : 400,
+								"bonuses" : [ { "type" : "MOVEMENT", "subtype" : "heroMovementLand",  "val" : 400, "stacking" : "stables", "valueType" : "ADDITIVE_VALUE", "duration" : "ONE_WEEK"} ]
+							}
+						]
+					},
 					"requires" : ["dwellingLvl4"],
 					"id" : 21
 				},
@@ -267,10 +285,18 @@
 					"name" : "Statue of Unity",
 					"cost" : 
 					{
-                    	                        "ore" : 5,
+                    	"ore" : 5,
 						"gold" : 1000
 					},
-					"type" : "defenceVisitingBonus",
+					"configuration" : {
+						"visitMode" : "hero",
+						"rewards" : [
+							{
+								"message" : "Some time spent at the Statue of Unity allows you to learn more effective combat skills (+1 Defense skill)",
+								"primary" : { "defence" : 1 }
+							}
+						]
+					},
 					"requires" : ["mageGuild1"],
 					"id" : 22
 				},
@@ -280,6 +306,7 @@
 					"name" : "Red Colossus",
 					"produce": { "gold": 5000 },
 					"id" : 26,
+					"bonuses": [ { "type": "MORALE", "val": 2, "propagator": "PLAYER_PROPAGATOR" } ],
 					"mode" : "grail"
 				},
 				"dwellingLvl1" :

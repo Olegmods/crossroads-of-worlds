@@ -28,7 +28,7 @@
 				}
 			},
 
-			"musicTheme" : "music/factions/tenebrae",
+			"musicTheme" : [ "music/factions/tenebrae" ],
 			"defaultTavern" : 5,
 			"tavern" :
 			{
@@ -167,7 +167,6 @@
 				}
                         },
 			"mageGuild" : 5,
-			"warMachine" : "tenMilitaryCrossbow",
 			"moatAbility" : "castleMoat",
 			"names" : [
 				"Crurson",

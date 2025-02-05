@@ -28,7 +28,7 @@
 				}
 			},
 
-			"musicTheme" : "music/factions/fen",
+			"musicTheme" : [ "music/factions/fen" ],
 			"defaultTavern" : 5,
 			"tavern" :
 			{
@@ -168,7 +168,6 @@
 				}
                         },
 			"mageGuild" : 5,
-			"warMachine" : "fenCrossbow",
 			//"moatDamage" : 70,
 			//"moatHexes" : [ 11, 28, 44, 61, 77, 111, 129, 146, 164, 181 ],
 			"names" : [

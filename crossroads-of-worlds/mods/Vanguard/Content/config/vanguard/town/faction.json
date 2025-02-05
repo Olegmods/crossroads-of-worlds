@@ -28,7 +28,7 @@
 				}
 			},
 
-			"musicTheme" : "music/factions/vanguard",
+			"musicTheme" : [ "music/factions/vanguard" ],
 			"defaultTavern" : 5,
 			"tavern" :
 			{
@@ -50,16 +50,16 @@
 				"witch"        : 5,
 				"planeswalker" : 5,
 				"elementalist" : 5,
-                                "apTrainman"    : 5,
-                                "apPontiff"    : 5
+                "apTrainman"    : 5,
+                "apPontiff"    : 5
 			},
 			"tavernVideo" : "TAVERN.BIK",
 			"guildBackground" : "TPMAGE.bmp",
 			"guildSpells" :
 			{
 				"bless": 10,
-                                "bloodlust": 0,
-                                "cure": 10,
+                "bloodlust": 0,
+                "cure": 10,
                 "curse": 0,
                 "dispel": 10,
                 "haste": 5,
@@ -102,7 +102,7 @@
                 "protectAir": 2,
                 "protectEarth": 4,
                 "teleport": 8,
-               "armageddon": 0,
+				"armageddon": 0,
                 "berserk": 5,
                 "chainLightning": 10,
                 "clone": 5,
@@ -170,9 +170,6 @@
 				}
                         },
 			"mageGuild" : 5,
-			"warMachine" : "apHeavyCrossbow",
-			//"moatDamage" : 70,
-			//"moatHexes" : [ 11, 28, 44, 61, 77, 111, 129, 146, 164, 181 ],
 			"names" : [
 				"Beason",
 				"Loyburn",

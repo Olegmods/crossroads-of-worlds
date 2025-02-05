@@ -196,6 +196,7 @@
 						"wood" : 5,
 						"gold" : 500
 					},
+					"marketModes" : ["resource-resource", "resource-player"],
 					"id" : 14
 				},
 				"resourceSilo" :
@@ -208,12 +209,14 @@
 						"gold" : 5000
 					},
 					"requires" : ["marketplace"],
+					"produce": { "mercury": 1 },
 					"id" : 15
 				},
 				"blacksmith" :
 				{
-					"description" : "The Blacksmith provides your armies with Balistas.",
+					"description" : "The Blacksmith provides your armies with Plague Crossbows.",
 					"name" : "Blacksmith",
+					"warMachine" : "nwPlagueCrossbow",
 					"cost" :
 					{
 						"wood" : 5,
@@ -260,7 +263,14 @@
                     	"ore" : 10,
 						"gold" : 2000
 					},
-					"type" : "lighthouse",
+					"bonuses": [
+						{
+							"propagator": "PLAYER_PROPAGATOR",
+							"type": "MOVEMENT",
+							"subtype": "heroMovementSea",
+							"val": 500
+						}
+					],
 					"requires" : ["shipyard"],
 					"id" : 17
 				},
@@ -273,13 +283,22 @@
 						"wood"    : 10,
 						"gold" : 2000
 					},
-					"type" : "stables",
+					"configuration" : {
+						"visitMode" : "bonus",
+						"rewards" : [
+							{
+								"message" : "@core.genrltxt.580",
+								"movePoints" : 400,
+								"bonuses" : [ { "type" : "MOVEMENT", "subtype" : "heroMovementLand",  "val" : 400, "stacking" : "stables", "valueType" : "ADDITIVE_VALUE", "duration" : "ONE_WEEK"} ]
+							}
+						]
+					},
 					"requires" : ["dwellingLvl4"],
 					"id" : 21
 				},
 				"special3" : 
 				{
-					"description" : "During s siege, the Brotherhood of the Sword increases troop morale +2.",
+					"description" : "During siege, the Brotherhood of the Sword increases troop morale +2.",
 					"name" : "Brotherhood of the Sword",
 					"cost" : 
 					{
@@ -287,7 +306,13 @@
 						"gold" : 500
 					},
                     "requires" : [ "tavern" ],
-                    "type" : "brotherhoodOfSword",
+                    "upgradeReplacesBonuses" : true,
+					"bonuses": [
+						{
+							"type": "MORALE",
+							"val": 2
+						}
+					],
 					"id" : 22,
 					"upgrades" : "tavern"						
 				},	
