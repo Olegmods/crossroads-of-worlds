@@ -8,6 +8,11 @@
 		},
 		"faction" : "underworld",
 		"upgrades": ["unRoyalCavalry"],
+		"advMapAmount" :
+		{
+			 "max" : 12,
+			 "min" : 5
+		},
 		"level" : 6,
 		"attack" : 15,
 		"doubleWide" : true,		

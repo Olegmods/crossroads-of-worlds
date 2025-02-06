@@ -8,14 +8,14 @@
 		},
 		"advMapAmount" :
 		{
-			 "max" : 15,
-			 "min" : 5
+			 "max" : 20,
+			 "min" : 10
 		},
 		"faction" : "underworld",
 		"aiValue" : 510,
 		"attack" : 10,
 		"doubleWide" : true,
-                "cost" :
+        "cost" :
 		{
 			"gold" : 300
 		},

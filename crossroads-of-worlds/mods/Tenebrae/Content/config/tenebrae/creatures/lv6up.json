@@ -8,8 +8,8 @@
 		},
 		"advMapAmount" :
 		{
-			 "max" : 16,
-			 "min" : 10
+			 "max" : 8,
+			 "min" : 5
 		},
 		"faction" : "tenebrae",
 		"upgrades": ["tenlv6up2"],

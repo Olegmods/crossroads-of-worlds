@@ -9,7 +9,7 @@
 		"advMapAmount" :
 		{
 			 "max" : 8,
-			 "min" : 3
+			 "min" : 4
 		},
 		"faction" : "underworld",
 		"aiValue" : 2327,

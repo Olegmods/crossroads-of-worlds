@@ -8,6 +8,11 @@
 		},
 		"faction" : "underworld",
 		"upgrades": ["unDragon2"],
+		"advMapAmount" :
+		{
+			 "max" : 10,
+			 "min" : 4
+		},
 		"level" : 7,
 		"attack" : 20,
 		"doubleWide" : true,		

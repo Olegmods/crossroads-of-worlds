@@ -11,6 +11,11 @@
 		"attack" : 25,
 		"doubleWide" : true,		
 		"defense" : 25,
+		"advMapAmount" :
+		{
+			 "max" : 8,
+			 "min" : 3
+		},
 		"damage" :
 		{
 			 "min" : 50,

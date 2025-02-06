@@ -3,14 +3,13 @@
 	{
 		"name" :
 		{
-			"plural" : "Crossbowmans",
+			"plural" : "Crossbowmen",
 			"singular" : "Crossbowman"
 		},
 		"advMapAmount" :
 		{
-			 "max" : 25,
+			 "max" : 30,
 			 "min" : 16
-
 		},
 		"faction" : "underworld",
 		"upgrades": ["unEliteCrossbowman"],

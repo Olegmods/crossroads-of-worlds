@@ -9,7 +9,7 @@
 		"advMapAmount" :
 		{
 			 "max" : 25,
-			 "min" : 18
+			 "min" : 12
 		},
 		"faction" : "underworld",
 		"upgrades": ["unScorpohand2"],

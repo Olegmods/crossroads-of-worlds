@@ -8,8 +8,8 @@
 		},
 		"advMapAmount" :
 		{
-			 "max" : 25,
-			 "min" : 18
+			 "max" : 20,
+			 "min" : 12
 		},
 		"faction" : "underworld",
 		"hasDoubleWeek": true,

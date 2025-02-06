@@ -3,14 +3,13 @@
 	{
 		"name" :
 		{
-			"plural" : "Royal Crossbowmans",
+			"plural" : "Royal Crossbowmen",
 			"singular" : "Royal Crossbowman"
 		},
 		"advMapAmount" :
 		{
-			 "max" : 25,
-			 "min" : 16
-
+			 "max" : 20,
+			 "min" : 14
 		},
 		"faction" : "underworld",
 		"level" : 2,
