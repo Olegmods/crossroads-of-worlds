@@ -1,10 +1,10 @@
 {
 	"name" : "Outpost",
 	"description" : "Outpost town",
-	"author": "Zeryss acidchalk",
+	"author": "Zeryss, acidchalk",
 	"version" : "0.2",
 	"contact": "https://vk.com/public184999722",
-	"modType" : "Compatibility",
+	"modType" : "Town",
 	"depends" :
 	[
 		"newtown-terrains.plateaulandterrain"
