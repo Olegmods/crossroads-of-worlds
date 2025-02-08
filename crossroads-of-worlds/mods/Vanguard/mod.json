@@ -4,7 +4,7 @@
 	"author": "Zeryss",
 	"version" : "0.2",
 	"contact": "https://vk.com/public184999722",
-	"modType" : "Compatibility",	
+	"modType" : "Town",	
 	"depends" : ["hota.wastelandterrain"],
 	"factions" :
 	[
